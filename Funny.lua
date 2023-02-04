@@ -1,15 +1,7 @@
-if Clip == false and speaker.Character ~= nil then
-			for _, child in pairs(speaker.Character:GetDescendants()) do
-				if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= floatName then
-					child.CanCollide = false
-				end
-			end
-		end
-	end
 
 local Global = getgenv and getgenv() or _G
 	
-	local RunService = game:GetService("RunService")
+	local RunService = ("RunService")
 	local Players = game:GetService("Players")
 	local Player = Players.LocalPlayer
 	local Character = Player.Character
@@ -256,5 +248,13 @@ local Global = getgenv and getgenv() or _G
 				end)
 			end
 			game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()connection:Disconnect()end)
+		end
+	end
+if Clip == false and speaker.Character ~= nil then
+			for _, child in pairs(speaker.Character:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= floatName then
+					child.CanCollide = false
+				end
+			end
 		end
 	end
