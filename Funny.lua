@@ -1,7 +1,6 @@
-
 local Global = getgenv and getgenv() or _G
 	
-	local RunService = ("RunService")
+	local RunService = game:GetService("RunService")
 	local Players = game:GetService("Players")
 	local Player = Players.LocalPlayer
 	local Character = Player.Character
@@ -44,8 +43,7 @@ local Global = getgenv and getgenv() or _G
 		{"7402858015",CFrame.Angles(0,0,0)},
 		{"14456185",CFrame.Angles(0,0,0)},
 	}
-	
-	
+
 	local function RainbowSelection(Part)
 		local Selection = Instance.new("Highlight")
 		Selection.Name = "Padero Pride Month Special"
@@ -67,7 +65,7 @@ local Global = getgenv and getgenv() or _G
 	end
 	
 	do -- Settings
-		Global.Fling = Character.Humanoid.RigType == Enum.HumanoidRigType.R15 and 'LowerTorso' or Global.Reanimation == "PermaDeath" and 'HumanoidRootPart' or 'Neck'
+		Global.Fling = Character.Humanoid.RigType == Enum.HumanoidRigType.R15 and 'LowerTorso' or Global.Reanimation == "PermaDeath" and 'HumanoidRootPart' or 'Torso'
 		Global.ShowReal = true
 		Global.GodMode = Global.Reanimation == 'PermaDeath' and true or false
 		Global.Velocity = -35
@@ -114,7 +112,7 @@ local Global = getgenv and getgenv() or _G
 				end
 			end
 			if ReplacementHat then
-				ReplacementHat[1].CloneHat.Value.AccessoryWeld.Part1 = Player.Character["Right Arm"]
+				ReplacementHat[1].CloneHat.Value.AccessoryWeld.Part1 = Player.Character["Torso"]
 				ReplacementHat[1].CloneHat.Value.AccessoryWeld.C0=ReplacementHat[2]
 				ReplacementHat[1]:FindFirstChildOfClass("SpecialMesh"):Destroy()
 			end
